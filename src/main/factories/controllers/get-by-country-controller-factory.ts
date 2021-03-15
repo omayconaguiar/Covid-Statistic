@@ -1,4 +1,4 @@
-import { makeDbGetByCountry, makeGetByIdValidation,makeLogControllerDecorator } from '@/main/factories'
+import { makeDbGetByCountry, makeGetByIdValidation, makeLogControllerDecorator } from '@/main/factories'
 import { Controller } from '@/presentation/protocols'
 import { GetByCountryController } from '@/presentation/controllers'
 

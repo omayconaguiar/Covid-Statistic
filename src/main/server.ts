@@ -1,10 +1,10 @@
 import 'module-alias/register'
 import { MongoHelper } from '../infra/db/mongodb/mongo-helper'
 import env from './config/env'
-import Queue from '../presentation/lib/Queue';
+import Queue from '../presentation/lib/Queue'
 // import BullBoard from 'bull-board';
 
-Queue.process(); 
+Queue.process()
 // BullBoard.setQueues(Queue.queues.map(queue => queue.bull));
 MongoHelper.connect(env.mongoUrl)
   .then(async () => {

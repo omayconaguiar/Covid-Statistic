@@ -29,3 +29,9 @@ yarn start
 yarn test
 ```
 
+### Lint
+
+```js
+yarn lint
+```
+

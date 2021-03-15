@@ -37,7 +37,7 @@ export class SignUpController implements Controller {
 }
 
 export namespace SignUpController {
-  export type Request = {
+  export interface Request {
     name: string
     email: string
     password: string

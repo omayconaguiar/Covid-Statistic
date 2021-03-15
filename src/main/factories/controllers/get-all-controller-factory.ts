@@ -1,8 +1,8 @@
 import { makeDbGetAll, makeLogControllerDecorator } from '@/main/factories'
 import { Controller } from '@/presentation/protocols'
-import { getAllControllers } from '@/presentation/controllers'
+import { GetAllControllers } from '@/presentation/controllers'
 
 export const makeGetAllController = (): Controller => {
-  const controller = new getAllControllers(makeDbGetAll())
+  const controller = new GetAllControllers(makeDbGetAll())
   return makeLogControllerDecorator(controller)
 }

@@ -11,6 +11,7 @@
     "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
     "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -19,7 +20,7 @@
     "test:ci": "npm test -- --coverage"
   },
   "devDependencies": {
-    "@shelf/jest-mongodb": "^1.1.5",
+    "@shelf/jest-mongodb": "^1.2.3",
     "@types/bcrypt": "^3.0.0",
     "@types/bull": "^3.11.0",
     "@types/express": "^4.17.4",
@@ -64,24 +65,18 @@
     "module-alias": "^2.2.2",
     "mongo-round": "^1.0.0",
     "mongodb": "^3.5.5",
+    "mongodb-memory-server": "6.5.1",
     "nodemon": "^2.0.2",
     "swagger-router": "^0.7.4",
     "swagger-ui-express": "^4.1.5",
     "validator": "^12.2.0"
   },
   "_moduleAliases": {
-    "@/main/adapters": "src/main/adapters",
-    "@/main/factories": "src/main/factories",
-    "@/presentation/controllers": "src/presentation/controllers",
-    "@/presentation/helpers": "src/presentation/helpers",
-    "@/presentation/errors":"src/presentation/errors",
-    "@/validation/validators": "src/validation/validators",
-    "@/infra/validators": "src/infra/validators",
-    "@/infra/db":"src/infra/db",
-    "@/presentation/middlewares": "src/presentation/middlewares",
-    "@/data/usecases": "src/data/usecases",
-    "@/infra/cryptography": "src/infra/cryptography",
-    "@/main/config/env": "src/main/config/env",
-    "@/main/middlewares": "src/main/middlewares"
+    "@": "src"
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "4.4.1"
+    }
   }
 }

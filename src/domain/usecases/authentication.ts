@@ -3,12 +3,12 @@ export interface Authentication {
 }
 
 export namespace Authentication {
-  export type Params = {
+  export interface Params {
     email: string
     password: string
   }
 
-  export type Result = {
+  export interface Result {
     accessToken: string
     name: string
   }

@@ -3,7 +3,7 @@ export interface LoadAccountByTokenRepository {
 }
 
 export namespace LoadAccountByTokenRepository {
-  export type Result = {
+  export interface Result {
     id: string
   }
 }

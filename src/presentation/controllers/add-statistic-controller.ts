@@ -3,13 +3,13 @@ import { AddStatistic } from '@/domain/usecases'
 import { serverError, noContent, badRequest } from '@/presentation/helpers'
 
 export class AddStatisticControllers implements Controller {
-  constructor (    
+  constructor (
     private readonly addStatistic: AddStatistic,
     private readonly validation: Validation
   ) {}
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
-    try {   
+    try {
       const error = this.validation.validate(httpRequest.body)
       if (error) {
         return badRequest(error)
@@ -19,9 +19,9 @@ export class AddStatisticControllers implements Controller {
       const { id } = httpRequest.params
 
       await this.addStatistic.addStatistic({
-        deaths, tests, cases,id
-      })   
-      
+        deaths, tests, cases, id
+      })
+
       return noContent()
     } catch (error) {
       console.log(error)

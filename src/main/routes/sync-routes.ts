@@ -1,7 +1,9 @@
 import { Router } from 'express'
 import { adaptRoute } from '../adapters/express-route-adapter'
-import { makeGetSyncStatisticController, makeGetByCountryController,
-   makeGetAllController, makeAddStatisticController} from '@/main/factories'
+import {
+  makeGetSyncStatisticController, makeGetByCountryController,
+  makeGetAllController, makeAddStatisticController
+} from '@/main/factories'
 import { adminAuth } from '@/main/middlewares'
 
 export default (router: Router): void => {
