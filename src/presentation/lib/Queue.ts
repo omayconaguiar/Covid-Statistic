@@ -5,7 +5,7 @@ import PopulateCovid from '../jobs/PopulateCovid'
 var data: SyncStatic
 const jobs = new PopulateCovid(data)
 
-const queues = () => ({
+const queues: any = () => ({
   bull: new Queue(jobs.key, `redis://${redisConfig.host}:${redisConfig.port}`),
   name: jobs.key,
   handle: jobs.handle
@@ -20,13 +20,13 @@ export default {
     return queue.bull.add(data, queue.options)
   },
   process () {
-    return this.queues = () => {
-      this.queues.bull.process(this.queues.handle)
+    // return this.queues {
+    //   this.queues.bull.process(this.queues.handle)
 
-      this.queues.bull.on('failed', (job, err) => {
-        console.log('Job failed'/* , queue.key, job.data */)
-        // console.log(err);
-      })
-    }
+    //   this.queues.bull.on('failed', (job, err) => {
+    //     console.log('Job failed'/* , queue.key, job.data */)
+    //     // console.log(err);
+    //   }
+    // }
   }
 }

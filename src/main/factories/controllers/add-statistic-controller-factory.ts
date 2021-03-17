@@ -1,8 +1,8 @@
 import { makeDbAddStatistic, makeAddStatisticValidation, makeLogControllerDecorator } from '@/main/factories'
 import { Controller } from '@/presentation/protocols'
-import { AddStatisticControllers } from '@/presentation/controllers'
+import { AddStatisticController } from '@/presentation/controllers'
 
 export const makeAddStatisticController = (): Controller => {
-  const controller = new AddStatisticControllers(makeDbAddStatistic(), makeAddStatisticValidation())
+  const controller = new AddStatisticController(makeDbAddStatistic(), makeAddStatisticValidation())
   return makeLogControllerDecorator(controller)
 }

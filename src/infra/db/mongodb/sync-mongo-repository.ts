@@ -6,7 +6,7 @@ export class SyncMongoRepository implements SyncStatisticRepository {
     const surveyCollection = await MongoHelper.getCollection('sync')
     const call = new SyncMongoRepository()
     const exist = await call.verifyExist()
-    
+
     if (exist.length === data.covidLength) {
       return await call.removeAll()
     } else {

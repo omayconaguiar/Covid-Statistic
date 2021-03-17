@@ -1,19 +1,16 @@
-import { Controller, HttpResponse, HttpRequest } from '@/presentation/protocols'
+import { Controller, HttpResponse } from '@/presentation/protocols'
 import { GetAll } from '@/domain/usecases'
 import { serverError, ok } from '@/presentation/helpers'
 
-export class GetAllControllers implements Controller {
+export class GetAllController implements Controller {
   constructor (
     private readonly getAll: GetAll
   ) {}
 
-  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+  async handle (request: GetAllController.Request): Promise<HttpResponse> {
     try {
-      const { limit, offset } = httpRequest.query
-
       var response = await this.getAll.getAll({
-        limit: parseInt(limit),
-        offset: parseInt(offset)
+        ...request
       })
 
       return ok(response)
@@ -21,5 +18,12 @@ export class GetAllControllers implements Controller {
       console.log(error)
       return serverError(error)
     }
+  }
+}
+
+export namespace GetAllController {
+  export type Request = {
+    limit: number
+    offset: number
   }
 }

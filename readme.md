@@ -1,6 +1,6 @@
 # **Covid Statistic**
 
-Get all data from covid api, sync on local database and make users can get all, get data by country id, post new infos in a specific country and after all can sync with original response from covid api.
+Get all data from covid api, sync on local database and make users can get all, get data by country id, post new infos in a specific country and after all can sync with original response from covid api. The get api can pass opcional fields like: limit and offset, to make pagination.
 
 > ## APIs:
 
@@ -34,4 +34,3 @@ yarn test
 ```js
 yarn lint
 ```
-

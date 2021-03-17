@@ -1,4 +1,4 @@
-import { Controller, HttpResponse, Validation, HttpRequest } from '@/presentation/protocols'
+import { Controller, HttpResponse, Validation } from '@/presentation/protocols'
 import { GetByCountry } from '@/domain/usecases'
 import { serverError, ok, badRequest } from '@/presentation/helpers'
 
@@ -8,17 +8,15 @@ export class GetByCountryController implements Controller {
     private readonly validation: Validation
   ) {}
 
-  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+  async handle (request: GetByCountryController.Request): Promise<HttpResponse> {
     try {
-      const error = this.validation.validate(httpRequest.params)
+      const error = this.validation.validate(request)
       if (error) {
         return badRequest(error)
       }
 
-      const { id } = httpRequest.params
-
       var response = await this.getByCountry.getByCountry({
-        id
+        ...request
       })
 
       return ok(response)
@@ -26,5 +24,11 @@ export class GetByCountryController implements Controller {
       console.log(error)
       return serverError(error)
     }
+  }
+}
+
+export namespace GetByCountryController {
+  export type Request = {
+    id: string
   }
 }

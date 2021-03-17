@@ -17,19 +17,19 @@ export interface AddStatisticRepository {
 }
 
 export namespace SyncStatisticRepository {
-  export type Result = SyncStatic.Result;
+  export type Result = SyncStatic.Result
 }
 
 export namespace GetbyCountryRepository {
-  export type Params = GetByCountry.Params;
-  export type Result = GetByCountry.Result;
+  export type Params = GetByCountry.Params
+  export type Result = GetByCountry.Result
 }
 
 export namespace GetAllRepository {
-  export type Params = GetAll.Params;
-  export type Result = GetAll.Result;
+  export type Params = GetAll.Params
+  export type Result = GetAll.Result
 }
 
 export namespace AddStatisticRepository {
-  export type Params = AddStatistic.Params;
+  export type Params = AddStatistic.Params
 }

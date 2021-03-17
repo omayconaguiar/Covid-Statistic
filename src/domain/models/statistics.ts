@@ -30,4 +30,3 @@ export type GetAllModel = {
 export type GetByCountryModel = {
   id: string
 }
-  
