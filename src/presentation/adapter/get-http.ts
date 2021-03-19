@@ -1,7 +1,7 @@
 import { SyncStatic } from '@/domain/usecases'
 import axios from 'axios'
 
-export default class HttpCalls {
+export class HttpCalls {
   async covidCall (): Promise<SyncStatic.Result> {
     try {
       const { response } = (await axios.get('https://covid-193.p.rapidapi.com/statistics',

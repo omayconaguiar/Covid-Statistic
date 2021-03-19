@@ -1,16 +1,15 @@
-import HttpCalls from '../adapter/get-http'
-// import Queue from '../lib/Queue'
-
-import { Controller, HttpResponse } from '@/presentation/protocols'
+import { HttpCalls } from '@/presentation/adapter'
+import { Controller } from '@/presentation/protocols'
 import { SyncStatic } from '@/domain/usecases'
 import { serverError, noContent } from '@/presentation/helpers'
 
 export class SyncStatisticsController implements Controller {
   constructor (
-    private readonly syncStatic: SyncStatic
-  ) {}
+    public syncStatic: SyncStatic
+  ) {
+  }
 
-  async handle (request: SyncStatisticsController.Request): Promise<HttpResponse> {
+  async handle (request: SyncStatisticsController.Request): Promise<any> {
     try {
       var response = new HttpCalls()
       var covidData: any = await response.covidCall()
@@ -34,8 +33,6 @@ export class SyncStatisticsController implements Controller {
           time: covidData[i].time
         })
       }
-      // await Queue.add('SyncCovidData', { covidData })
-
       return noContent()
     } catch (error) {
       console.log(error)

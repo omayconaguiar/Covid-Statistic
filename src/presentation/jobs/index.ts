@@ -1,1 +1,1 @@
-export { default as PopulateCovid } from './populateCovid'
+export { PopulateCovid } from './populate-covid'
