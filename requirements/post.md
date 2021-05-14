@@ -1,11 +1,10 @@
-# Getall covidData
+# Sync api
 
 > ## Success Case:
-1. ✅ GetAll movies from local database with method **GET** in **/api/movie**
+1. ✅ Create a movie with the method **POST** in **/api/movie**
 1. ✅ Check if was admin user make the call
-1. ✅ Its possible pass movie, type, rate fields to make a customize search
-1. ✅ Return all movieData
-1. ✅ Return 200
+1. ✅ Populate database
+1. ✅ Return 204
 
 > ## Exceptions:
 1. ✅ Return 404 if api does not exist

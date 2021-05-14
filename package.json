@@ -12,6 +12,7 @@
     "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "debug": "node --inspect -r ts-node/register ./src/index.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",

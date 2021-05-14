@@ -1,15 +1,15 @@
-# **Covid Statistic**
+# **Customer Service Api - Movie Api**
 
-Get all data from covid api, sync on local database and make users can get all, get data by country id, post new infos in a specific country and after all can sync with original response from covid api. The get api can pass opcional fields like: limit and offset, to make pagination.
+Register, login and create new movie for a user, list, update and delete if you are logged.
 
 > ## APIs:
 
 1. [Register](./requirements/signup.md)
 1. [Login](./requirements/login.md)
-1. [Sync](./requirements/sync.md)
-1. [Get all from db](./requirements/get-all.md)
-1. [Get by country id](./requirements/get-by-country.md)
-1. [Post by country id](./requirements/add-by-country.md)
+1. [Create a movie](./requirements/post.md)
+1. [Get all movie or pass query params](./requirements/get-all.md)
+1. [Update a movie](./requirements/update.md)
+1. [Delete a movie](./requirements/delete.md)
 
 Setup To Run locally
 

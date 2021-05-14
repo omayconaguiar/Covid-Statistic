@@ -1,6 +1,2 @@
 export * from './mock-validation'
 export * from './mock-account'
-export * from './mock-add-statistic'
-export * from './mock-get-all'
-export * from './mock-get-by-country'
-export * from './mock-sync'
